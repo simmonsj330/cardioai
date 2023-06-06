@@ -1,0 +1,16 @@
+# Due to using venv, we cannot export a .yaml environment file in the same
+# way that conda would do so. As such, we need to manually update the 
+# requirements.yaml OR we could switch entirely to a conda env instead of venv
+
+# Python version required to run the project.
+python: "3.9.7"
+# Dependencies required to build packages. This field is optional.
+build_dependencies:
+  - pip
+  - setuptools
+# Dependencies required to run the project. Only the important/main ones should be listed.
+dependencies:
+  - scikit-learn
+  - mlflow
+  - pandas
+  
