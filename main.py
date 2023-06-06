@@ -8,10 +8,10 @@ import mlflow
 if __name__ == '__main__':
     
     # load in dataset
-    diabetes = datasets.load_breast_cancer(as_frame=True)
+    cancer = datasets.load_breast_cancer(as_frame=True)
 
     # train, test, split
-    X_train, X_test, Y_train, Y_test = train_test_split(diabetes.data, diabetes.target, test_size=0.3, random_state=109)
+    X_train, X_test, Y_train, Y_test = train_test_split(cancer.data, cancer.target, test_size=0.3, random_state=109)
     
     # call classifier, fit, and run prediction
     clf = svm.SVC(C=2, kernel="linear")
