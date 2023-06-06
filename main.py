@@ -6,6 +6,8 @@ from sklearn import metrics
 import mlflow
 
 if __name__ == '__main__':
+
+    #mlflow.autolog()
     
     # load in dataset
     cancer = datasets.load_breast_cancer(as_frame=True)
@@ -21,4 +23,6 @@ if __name__ == '__main__':
     #print(clf.get_params())
 
     # identify accuracy
+    print("\n")
     print("Accuracy:",metrics.accuracy_score(Y_test, Y_pred))
+    print("\n")

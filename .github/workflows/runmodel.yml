@@ -1,0 +1,18 @@
+name: Run Main Model
+
+on: workflow_dispatch
+
+jobs:
+  mlflowprojectrun:
+    runs-on: macos-latest
+    name: Run MLFlow Projects
+    steps:
+      - name: Install PyEnv & Restart ZSH Shell
+        run: |
+          echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+          echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+          echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+          exec "$SHELL"
+      - name: Run Model Using MLproject File
+        run: |
+          mlflow run .
